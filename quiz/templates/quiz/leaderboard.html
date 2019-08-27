@@ -9,7 +9,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>AUTOMANIA</title>
+
+    <title>QFIESTA</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{% static 'quiz/vendor1/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -26,27 +27,80 @@
     <script src="{% static 'quiz/autoquiz-submit.js' %}"></script>
 
    <link  href="{% static 'quiz/css4/style.css' %}" rel="stylesheet">
+   <script>
+   $(document).ready(function () {
+     $('#mytable').DataTable({
+       "pagingType": "simple" // "simple" option for 'Previous' and 'Next' buttons only
+     });
+     $('.dataTables_length').addClass('bs-select');
+   });
+
+
+
+
+
+
+
+ $(function(){
+ 	// Just to append id number for each row
+ 					$('table tr:eq(0)').prepend('<th> ID </th>')
+
+ 					var id = 0;
+
+ 					$('table tr:gt(0)').each(function(){
+ 						id++
+ 						$(this).prepend('<td>'+id+'</td>');
+ 					});
+ })
+
+ //  Developed By Yasser Mas
+ // yasser.mas2@gmail.com
+
+   </script>
   </head>
     <body>
+
       <nav class="navbar navbar-light bg-light static-top">
     		<div class="container">
-    			<a class="navbar-brand" href="{% url 'index' %}">HOME</a>
-    			<h2>Time left:
-    			<span id="time" class="font-normal"></span>
-        </h2>
+          {% if user.is_authenticated %}
+           	<a class="btn btn-primary" href="/index2">Home</a>
 
+    			{% else %}
+          	<a class="btn btn-primary" href={% url 'index' %}>Home</a>
+              {% endif %}
+              {% if user.is_authenticated %}
+                <a class="btn btn-primary" href="/get_question">Back to Quiz</a>
+
+              {% else %}
+                <a class="btn btn-primary" href="/login">Back to Quiz</a>
+                  {% endif %}
     		</div>
     	</nav>
 
-        	<div id="particles-js">
+
+
+  <div class="container" style="position: absolute;">
+  <div class="float-center">
+
       <br />
       <br />
       <br />
       <br/>
       <br/>
+
        <h1 style="text-align:center; font-family: 'Georgia', serif; font-size: 3em; color:white;  ;">LEADERBOARD</h1>
+    <!--   <div aria-label="Page navigation example">
+         <ul class="pagination">
+           <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+           <li class="page-item"><a class="page-link" href="#">1</a></li>
+           <li class="page-item"><a class="page-link" href="#">2</a></li>
+           <li class="page-item"><a class="page-link" href="#">3</a></li>
+           <li class="page-item"><a class="page-link" href="#">Next</a></li>
+         </ul>
+       </div>-->
        <br/>
        <br/>
+<div id="mytable">
       <table>
           <thead>
           <tr>
@@ -73,6 +127,15 @@
  {% endfor %}
 </tbody>
 </table>
+
+</div>
+
+</div>
+
+</div>
+
+</div> <!-- 		End of Container -->
+<div id="particles-js">
 </div>
 
 

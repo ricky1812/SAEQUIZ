@@ -47,7 +47,8 @@ def login_view(request):
 @login_required
 def logout_view(request):
 	logout(request)
-	
+	return HttpResponseRedirect('/')
+
 
 
 def leaderboard(request):
@@ -63,14 +64,14 @@ def leaderboard(request):
 	return render(request,'quiz/leaderboard.html',{'people':people})
 
 def get_question(request):
-	
+
 	user=User.objects.get(username=request.user.username)
 	round=Question.objects.get(round=user.profile.curr_round)
-	
+
 	if request.method=='POST':
 		answers=request.POST['answers']
 		print(answers)
-		
+
 		if answers==round.ans:
 			print("correct")
 			user.profile.curr_round+=1
@@ -78,7 +79,7 @@ def get_question(request):
 			user.profile.score+=10
 			user.profile.submit_time=timezone.now()
 			print(user.profile.submit_time)
-			user.save()	
+			user.save()
 			if user.profile.curr_round>=5:
 				return redirect('end_page')
 			else:
@@ -92,14 +93,3 @@ def get_question(request):
 
 def end_page(request):
 	return render(request,'quiz/endpage.html')
-
-
-
-	
-			
-        
-	
-
-
-
-
