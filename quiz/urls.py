@@ -1,4 +1,5 @@
 from django.urls import path
+from django.conf.urls import url, include
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
@@ -12,6 +13,7 @@ urlpatterns = [
     path('leaderboard/',views.leaderboard,name='leaderboard'),
     path('get_question',views.get_question,name='get_question'),
     path('end_page',views.end_page,name='end_page'),
+    path('auth/', include('social_django.urls', namespace='social')),  # <- Here
     ]
 if settings.DEBUG is True:
 

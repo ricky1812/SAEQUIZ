@@ -41,6 +41,7 @@ body{
 canvas{
   display:block;
   vertical-align:bottom;
+
 }
 
 
@@ -81,16 +82,29 @@ canvas{
 .count-particles{
   border-radius: 0 0 3px 3px;
 }
-
+.actual-content-container
+{
+   z-index: 100;
+   /* whatever other style properties you want.  Apply this class to the div or other element you put your actual content in.*/
+}
 
 /* ---- particles.js container ---- */
 
-#particles-js{
+/*#particles-js{
   width: 100%;
   height: 100%;
   background-color: #000000;
   background-image: url('');
   background-size: cover;
   background-position: 50% 50%;
-  background-repeat: no-repeat;
+ background-repeat: no-repeat;
+}*/
+#particles-js {
+	margin-top:10%;
+   position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+
 }
