@@ -26,7 +26,7 @@ def signup(request):
 	else:
 		form=RegistrationForm()
 	args={'form': form}
-	return render(request,'quiz/signup.html',args)
+	return render(request,'quiz/signup2.html',args)
 
 def login_view(request):
 	message='Log In'
@@ -85,7 +85,7 @@ def get_question(request):
 			else:
 
 				return redirect('get_question')
-	if user.profile.curr_round<=5:
+	if user.profile.curr_round<=10:
 
 		return render(request,'quiz/quizpage.html',{'round':round})
 	else:
