@@ -26,7 +26,7 @@ li{list-style:none}
 
 html,body{
 	width:100%;
-	height:100%;
+	height:80%;
 	background:#000000;
 }
 
@@ -82,29 +82,25 @@ canvas{
 .count-particles{
   border-radius: 0 0 3px 3px;
 }
-.actual-content-container
-{
-   z-index: 100;
-   /* whatever other style properties you want.  Apply this class to the div or other element you put your actual content in.*/
-}
+
 
 /* ---- particles.js container ---- */
 
-/*#particles-js{
+#particles-js{
   width: 100%;
-  height: 100%;
+  height: 10%;
   background-color: #000000;
   background-image: url('');
   background-size: cover;
-  background-position: 50% 50%;
+  /*background-position: 50% 50%;*/
  background-repeat: no-repeat;
-}*/
-#particles-js {
+}
+/*#particles-js {
 	margin-top:10%;
-   
+
     top: 0;
     width: 100%;
-    height: 100%;
+    height: 10%;
     left: 0;
 
-}
+}*/
