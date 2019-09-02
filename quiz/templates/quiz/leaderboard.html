@@ -27,6 +27,16 @@
     <script src="{% static 'quiz/autoquiz-submit.js' %}"></script>
 
    <link  href="{% static 'quiz/css4/style.css' %}" rel="stylesheet">
+   <style>
+@media only screen and (min-width: 768px) {
+   #leader
+   {
+      margin-left: 25%; right: 1%;
+   }
+ }
+
+   </style>
+
    <script>
    $(document).ready(function () {
      $('#mytable').DataTable({
@@ -81,7 +91,7 @@
 
   <div class="container" style="position: absolute;">
 
-  <div class="col-xs-8" style="margin-left: 25%; right: 25%;">
+  <div class="col-xs-8" id="leader" >
 
       <br />
       <br />

@@ -16,6 +16,8 @@ def index(request):
 	return render(request,'quiz/index.html')
 def index2(request):
 	return render(request,'quiz/index2.html')
+def index3(request):
+	return render(request,'quiz/index3.html')
 
 def signup(request):
 	if request.method=='POST':
@@ -80,12 +82,16 @@ def get_question(request):
 			user.profile.submit_time=timezone.now()
 			print(user.profile.submit_time)
 			user.save()
-			if user.profile.curr_round>=5:
-				return redirect('end_page')
-			else:
+		#	if user.profile.curr_round==5 or user.profile.curr_round==7:
+		#		return redirect('end_page')
+		#	else:
 
-				return redirect('get_question')
-	if user.profile.curr_round<=10:
+			return redirect('quiz1')
+		else:
+			#message='Incorrect Answer!'
+			#context={'message':message}
+			return redirect('quiz2')
+	if user.profile.curr_round<=7:
 
 		return render(request,'quiz/quizpage.html',{'round':round})
 	else:
@@ -93,3 +99,7 @@ def get_question(request):
 
 def end_page(request):
 	return render(request,'quiz/endpage.html')
+def quiz1(request):
+	return render(request,'quiz/quiz1.html')
+def quiz2(request):
+	return render(request,'quiz/quiz2.html')
