@@ -49,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'event.urls'
@@ -75,6 +76,8 @@ AUTHENTICATION_BACKENDS = (
  'social_core.backends.google.GoogleOpenId',  # for Google authentication
  'social_core.backends.google.GoogleOAuth2',  # for Google authentication
 'django.contrib.auth.backends.ModelBackend',
+'social_core.backends.facebook.FacebookOAuth2',
+
  )
 
 WSGI_APPLICATION = 'event.wsgi.application'
@@ -115,6 +118,9 @@ AUTH_PASSWORD_VALIDATORS = [
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY ='452867490680-l6u5u0ucc1okbe93b78hoc14a1qcoa14.apps.googleusercontent.com'
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'ah53nj_nECi8RLuFKG_jgknw'
+
+SOCIAL_AUTH_FACEBOOK_KEY = '437101157149570'
+SOCIAL_AUTH_FACEBOOK_SECRET = '66fe2ea7507221d9adb4ba0be46ad577'
 
 LANGUAGE_CODE = 'en-us'
 
