@@ -91,7 +91,7 @@ def get_question(request):
 			#message='Incorrect Answer!'
 			#context={'message':message}
 			return redirect('quiz2')
-	if user.profile.curr_round<=7:
+	if user.profile.curr_round<=14:
 
 		return render(request,'quiz/quizpage.html',{'round':round})
 	else:
