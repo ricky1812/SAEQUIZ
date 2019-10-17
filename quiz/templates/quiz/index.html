@@ -24,18 +24,6 @@
 
   <!-- Custom styles for this template -->
   <link href="{% static 'quiz/css5/new-age.min.css' %}" rel="stylesheet">
-	<style>
-	@font-face {
-font-family: 'Georgia, serif';
-src: url('Georgia.eot'); /* IE9 Compat Modes */
-src: url('Georgia.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-		 url('Georgia.woff2') format('woff2'), /* Super Modern Browsers */
-		 url('Georgia.woff') format('woff'), /* Pretty Modern Browsers */
-		 url('Georgia.ttf')  format('truetype'), /* Safari, Android, iOS */
-		 url('Georgia.svg#svgFontName') format('svg'); /* Legacy iOS */
-}
-
-	</style>
   <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> 
   <style>
       @media only screen and (max-width: 576px) {
@@ -67,6 +55,18 @@ src: url('Georgia.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
             display:none;
         }
       }
+      @media only screen and (max-width: 576px) {
+        #logo {
+            height:5%;
+            width: 20%;
+        }
+      }
+      @media only screen and (min-width: 576px) {
+        #logo {
+            height:3%;
+            width: 10%;
+        }
+      }
 
   </style>
 
@@ -75,10 +75,10 @@ src: url('Georgia.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
 <body id="page-top">
 
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" style="padding-bottom:0px;">
     <div class="container">
-			<img src="{% static 'quiz/saelogo.png' %}" style="width: 10%; height: 1%;" />
-      <h1 class="mb-1" id="qfiesta" style="font-size: 1em;font-weight:bold; font-family: 'Georgia, serif';margin-left:60px;"><br />QFIESTA</h1>
+			<img id = "logo" src="{% static 'quiz/saelogo.png' %}"/>
+      <h1 class="mb-1" id="qfiesta" style="font-size: 1em;font-weight:bold; font-family: 'Georgia, serif';margin-left:40px;"><br />QFIESTA</h1>
       <a class="navbar-brand js-scroll-trigger" href="#page-top"></a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
