@@ -25,6 +25,37 @@
   <!-- Custom styles for this template -->
   <link href="{% static 'quiz/css5/new-age.min.css' %}" rel="stylesheet">
 	<style>
+		<style>
+      @media only screen and (max-width: 576px) {
+        #arihant {
+            height:20vw;
+            width: 20vw;
+        }
+      }
+      @media only screen and (min-width: 576px) {
+        #arihant {
+            height:6vw;
+            width: 6vw;
+        }
+      }
+      @media only screen and (max-width: 576px) {
+        #lemongrass {
+            height:15vw;
+            width: 50vw;
+        }
+      }
+      @media only screen and (min-width: 576px) {
+        #lemongrass {
+            height:6vw;
+            width: 16vw;
+        }
+      }
+      @media only screen and (min-width: 576px) {
+        #qfiesta {
+            display:none;
+        }
+      }
+  </style>
 	@font-face {
 font-family: 'Georgia, serif';
 src: url('Georgia.eot'); /* IE9 Compat Modes */
@@ -81,11 +112,11 @@ src: url('Georgia.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
                       
                   </div>
                   <div class = "col-2 ">
-                     <img src="{% static 'quiz/arihant.jpg' %}" style="height:6vw; width:6vw"/> 
+                     <img src="{% static 'quiz/arihant.jpg' %}" id="arihant"/> 
                       
                   </div>
                   <div class = "col-6 col-md-4">
-                     <img src="{% static 'quiz/lemongrass.jpg' %}" style="height:6vw; width:16vw"/> 
+                     <img src="{% static 'quiz/lemongrass.jpg' %}" id="lemongrass"/> 
                       
                   </div>
               </div>
