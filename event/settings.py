@@ -25,7 +25,7 @@ SECRET_KEY = 'nqbw^#4q82pxwumvh$4#cjbkk4t-2q4e02tq3h2@p+g0t&n&_='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['qfiesta.pythonanywhere.com']
 
 
 # Application definition
@@ -49,7 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    
+
 ]
 
 ROOT_URLCONF = 'event.urls'
@@ -140,12 +140,21 @@ LOGIN_REDIRECT_URL = 'index2'
 CURRENT_PATH = os.path.abspath(os.path.dirname(__file__))
 
 
-STATIC_ROOT = 'static/'
+#STATIC_ROOT = '/quiz/static/'
+
+#STATIC_URL = '/static/'
+#STATICFILES_DIRS = (
+ #                   os.path.join('/quiz/', 'static'),
+#)
+STATIC_ROOT = 'quiz/static/'
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (
-                    os.path.join(CURRENT_PATH, 'static'),
-)
+#STATIC_ROOT = "/home/jaideep97/SAEQUIZ/quiz/static"
+#STATIC_URL = '/static/'
+#STATICFILES_DIRS = (
+#                    os.path.join('/home/QFIESTA/SAEQUIZ/quiz/', 'static'),
+#)
+
 
 MEDIA_URL='/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
