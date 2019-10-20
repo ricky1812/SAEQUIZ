@@ -58,17 +58,22 @@ def leaderboard(request):
 	profiles = Profile.objects.order_by("-score","submit_time")
 	for i in profiles:
 		myuser = User.objects.get(id=i.user_id)
-		people.append({
-			'username':myuser.username,
-			'score':i.score,
-			'time':i.submit_time,
-			})
-	return render(request,'quiz/leaderboard.html',{'people':people})
+		if i.score>=200:
+
+
+			people.append({
+				'username':myuser.username,
+				'score':i.score,
+				'time':i.submit_time,
+				})
+	return render(request,'quiz/leaderboard2.html',{'people':people})
 
 def get_question(request):
 
 	user=User.objects.get(username=request.user.username)
 	round=Question.objects.get(round=user.profile.curr_round)
+	if user.profile.curr_round<29:
+		return render(request,'quiz/eliminated.html')
 
 	if request.method=='POST':
 		answers=request.POST['answers']
@@ -90,8 +95,9 @@ def get_question(request):
 		else:
 			#message='Incorrect Answer!'
 			#context={'message':message}
+			user.profile.score-=5
 			return redirect('quiz2')
-	if user.profile.curr_round<=14:
+	if user.profile.curr_round<=40:
 
 		return render(request,'quiz/quizpage.html',{'round':round})
 	else:

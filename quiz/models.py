@@ -30,7 +30,7 @@ def save_user_profile(sender, instance, **kwargs):
 class Question(models.Model):
 	question=models.CharField(max_length=500)
 	ans=models.CharField(max_length=500,default=None)
-	image = models.ImageField(upload_to='images',default="Not Available", blank=True)
+	image = models.ImageField(upload_to='images',null=True, blank=True)
 	round=models.IntegerField(default=1)
 
 	def __str__(self):
